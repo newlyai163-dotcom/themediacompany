@@ -5,17 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Media Company | Creative Excellence</title>
   <meta name="description" content="A trusted digital marketplace redefining how customers discover and collaborate with photographers and videographers.">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    body { background-color: #0f172a; color: white; scroll-behavior: smooth; font-family: ui-sans-serif, system-ui, sans-serif; }
-    .card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); transition: transform 0.3s ease; }
-    .card:hover { transform: translateY(-5px); }
-    .accent-yellow { color: #facc15; }
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 10px #facc15; }
-      50% { text-shadow: 0 0 20px #facc15, 0 0 40px #facc15; }
+    body {
+      background-color: #0f172a;
+      color: white;
+      scroll-behavior: smooth;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    .glow-text { animation: glow 2.5s ease-in-out infinite; }
+
+    .card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .accent-yellow {
+      color: #facc15;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #facc15; }
+      50% { text-shadow: 0 0 20px #facc15, 0 0 40px #facc15; }
+      100% { text-shadow: 0 0 10px #facc15; }
+    }
+
+    .glow-text {
+      animation: glow 2.5s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -27,20 +50,30 @@
     <a href="#about" class="hover:text-yellow-400 transition">About</a>
     <a href="#services" class="hover:text-yellow-400 transition">Services</a>
     <a href="#faq" class="hover:text-yellow-400 transition">FAQ</a>
-    <a href="#contact" class="bg-yellow-400 text-black px-5 py-2.5 rounded-full hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20">Contact</a>
+    <a href="#contact" class="bg-yellow-400 text-black px-5 py-2.5 rounded-full hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20">
+      Contact
+    </a>
   </div>
 </nav>
 
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 -mt-10">
-  <p class="text-5xl md:text-8xl font-extrabold italic tracking-widest accent-yellow glow-text mb-8">COMING SOON</p>
+  <p class="text-5xl md:text-8xl font-extrabold italic tracking-widest accent-yellow glow-text mb-8">
+    COMING SOON
+  </p>
+
   <div class="grid grid-cols-4 gap-4 md:gap-8 mb-12">
     <div><p id="days" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Days</span></div>
     <div><p id="hours" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Hours</span></div>
     <div><p id="minutes" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Minutes</span></div>
     <div><p id="seconds" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Seconds</span></div>
   </div>
+
   <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-white">The Media Company</h2>
   <p class="text-xl md:text-2xl accent-yellow font-semibold mb-6">Not just captured, Crafted</p>
+  <p class="text-slate-400 max-w-2xl text-lg leading-relaxed">
+    A trusted digital marketplace redefining how customers discover and collaborate
+    with photographers and videographers.
+  </p>
 </section>
 
 <section class="py-20 bg-slate-800/30 border-y border-slate-800">
@@ -49,7 +82,7 @@
     <div class="grid md:grid-cols-3 gap-8">
       <div class="card p-8 rounded-2xl border border-slate-700/50">
         <p class="text-slate-400 mb-2 uppercase text-sm tracking-wider">Total Visitors</p>
-        <h4 id="total-visits" class="text-5xl font-bold accent-yellow">...</h4>
+        <h4 id="total-visits" class="text-5xl font-bold accent-yellow">0</h4>
       </div>
       <div class="card p-8 rounded-2xl border border-slate-700/50">
         <p class="text-slate-400 mb-2 uppercase text-sm tracking-wider">Professionals Onboard</p>
@@ -69,9 +102,45 @@
   </div>
 </section>
 
+<section id="about" class="py-24">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold mb-6 text-white">About Us</h3>
+    <p class="text-slate-300 text-lg leading-relaxed">
+      The Media Company connects customers with verified photographers and videographers
+      through a transparent and standardized platform. We eliminate the hassle of negotiation
+      and ensure quality delivery for every memory captured.
+    </p>
+  </div>
+</section>
+
+<footer class="py-8 text-center text-slate-600 text-sm">
+  &copy; 2026 The Media Company. All rights reserved.
+</footer>
+
+<script>
+  const launchDate = new Date("2026-03-01T00:00:00").getTime();
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
+
+  setInterval(() => {
+    const now = new Date().getTime();
+    const d = launchDate - now;
+    if (d < 0) {
+      document.querySelector('.glow-text').innerText = "WE ARE LIVE";
+      return;
+    }
+    daysEl.innerText = Math.floor(d / (1000 * 60 * 60 * 24));
+    hoursEl.innerText = Math.floor((d / (1000 * 60 * 60)) % 24);
+    minutesEl.innerText = Math.floor((d / (1000 * 60)) % 60);
+    secondsEl.innerText = Math.floor((d / 1000) % 60);
+  }, 1000);
+</script>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getDatabase, ref, runTransaction, onValue, push, onDisconnect, set } 
+  import { getDatabase, ref, runTransaction, onValue, push, onDisconnect, set, serverTimestamp } 
   from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
   const firebaseConfig = {
@@ -82,49 +151,34 @@
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
-  // Elements
-  const visitsEl = document.getElementById('total-visits');
-  const liveCountEl = document.getElementById('live-count');
-
-  // 1. Total Visits Counter (with session protection)
+  // 1. Total Visits (Counted once per browser session)
   const visitsRef = ref(db, "stats/totalVisits");
-  
-  // Only increment if the user hasn't visited in this browser session
-  if (!sessionStorage.getItem('visited')) {
+  const visitsEl = document.getElementById('total-visits');
+
+  if (!sessionStorage.getItem('counted')) {
     runTransaction(visitsRef, (current) => (current || 0) + 1);
-    sessionStorage.setItem('visited', 'true');
+    sessionStorage.setItem('counted', 'true');
   }
 
-  onValue(visitsRef, (snapshot) => {
-    visitsEl.innerText = snapshot.val() || 0;
+  onValue(visitsRef, (snap) => {
+    visitsEl.innerText = snap.val() || 0;
   });
 
-  // 2. Live Users Counter
+  // 2. Live Users
   const liveRef = ref(db, "stats/liveUsers");
-  const myUserRef = push(liveRef); // Create unique entry for this visitor
+  const liveCountEl = document.getElementById('live-count');
   
-  // Add user and remove on disconnect
-  set(myUserRef, { active: true, time: Date.now() });
+  // Add this user
+  const myUserRef = push(liveRef);
+  set(myUserRef, { online: true, time: serverTimestamp() });
+  
+  // Remove user on disconnect
   onDisconnect(myUserRef).remove();
 
-  onValue(liveRef, (snapshot) => {
-    // Correctly count number of children in the liveUsers node
-    liveCountEl.innerText = snapshot.size || 0;
+  // Update UI count
+  onValue(liveRef, (snap) => {
+    liveCountEl.innerText = snap.size || 0;
   });
-</script>
-
-<script>
-  // Countdown Logic
-  const launchDate = new Date("2026-03-01T00:00:00").getTime();
-  setInterval(() => {
-    const now = new Date().getTime();
-    const d = launchDate - now;
-    if (d < 0) return;
-    document.getElementById('days').innerText = Math.floor(d / 86400000);
-    document.getElementById('hours').innerText = Math.floor((d % 86400000) / 3600000);
-    document.getElementById('minutes').innerText = Math.floor((d % 3600000) / 60000);
-    document.getElementById('seconds').innerText = Math.floor((d % 60000) / 1000);
-  }, 1000);
 </script>
 
 </body>
