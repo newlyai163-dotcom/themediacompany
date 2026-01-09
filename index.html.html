@@ -5,40 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Media Company | Creative Excellence</title>
   <meta name="description" content="A trusted digital marketplace redefining how customers discover and collaborate with photographers and videographers.">
-
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    body {
-      background-color: #0f172a;
-      color: white;
-      scroll-behavior: smooth;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-
-    .card {
-      background: rgba(30, 41, 59, 0.7);
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .accent-yellow {
-      color: #facc15;
-    }
-
+    body { background-color: #0f172a; color: white; scroll-behavior: smooth; font-family: ui-sans-serif, system-ui, sans-serif; }
+    .card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); transition: transform 0.3s ease; }
+    .card:hover { transform: translateY(-5px); }
+    .accent-yellow { color: #facc15; }
     @keyframes glow {
-      0% { text-shadow: 0 0 10px #facc15; }
+      0%, 100% { text-shadow: 0 0 10px #facc15; }
       50% { text-shadow: 0 0 20px #facc15, 0 0 40px #facc15; }
-      100% { text-shadow: 0 0 10px #facc15; }
     }
-
-    .glow-text {
-      animation: glow 2.5s ease-in-out infinite;
-    }
+    .glow-text { animation: glow 2.5s ease-in-out infinite; }
   </style>
 </head>
 
@@ -50,30 +27,20 @@
     <a href="#about" class="hover:text-yellow-400 transition">About</a>
     <a href="#services" class="hover:text-yellow-400 transition">Services</a>
     <a href="#faq" class="hover:text-yellow-400 transition">FAQ</a>
-    <a href="#contact" class="bg-yellow-400 text-black px-5 py-2.5 rounded-full hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20">
-      Contact
-    </a>
+    <a href="#contact" class="bg-yellow-400 text-black px-5 py-2.5 rounded-full hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20">Contact</a>
   </div>
 </nav>
 
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 -mt-10">
-  <p class="text-5xl md:text-8xl font-extrabold italic tracking-widest accent-yellow glow-text mb-8">
-    COMING SOON
-  </p>
-
+  <p class="text-5xl md:text-8xl font-extrabold italic tracking-widest accent-yellow glow-text mb-8">COMING SOON</p>
   <div class="grid grid-cols-4 gap-4 md:gap-8 mb-12">
     <div><p id="days" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Days</span></div>
     <div><p id="hours" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Hours</span></div>
     <div><p id="minutes" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Minutes</span></div>
     <div><p id="seconds" class="text-3xl md:text-5xl font-bold accent-yellow">0</p><span class="text-slate-400 text-xs md:text-sm uppercase tracking-wider">Seconds</span></div>
   </div>
-
   <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-white">The Media Company</h2>
   <p class="text-xl md:text-2xl accent-yellow font-semibold mb-6">Not just captured, Crafted</p>
-  <p class="text-slate-400 max-w-2xl text-lg leading-relaxed">
-    A trusted digital marketplace redefining how customers discover and collaborate
-    with photographers and videographers.
-  </p>
 </section>
 
 <section class="py-20 bg-slate-800/30 border-y border-slate-800">
@@ -82,7 +49,7 @@
     <div class="grid md:grid-cols-3 gap-8">
       <div class="card p-8 rounded-2xl border border-slate-700/50">
         <p class="text-slate-400 mb-2 uppercase text-sm tracking-wider">Total Visitors</p>
-        <h4 id="total-visits" class="text-5xl font-bold accent-yellow">Loading...</h4>
+        <h4 id="total-visits" class="text-5xl font-bold accent-yellow">...</h4>
       </div>
       <div class="card p-8 rounded-2xl border border-slate-700/50">
         <p class="text-slate-400 mb-2 uppercase text-sm tracking-wider">Professionals Onboard</p>
@@ -90,162 +57,74 @@
       </div>
       <div class="card p-8 rounded-2xl border border-slate-700/50">
         <p class="text-slate-400 mb-2 uppercase text-sm tracking-wider">Live Users</p>
-        <h4 id="live-users" class="text-5xl font-bold text-green-400 relative inline-flex items-center gap-3">
+        <h4 class="text-5xl font-bold text-green-400 relative inline-flex items-center gap-3">
           <span class="relative flex h-3 w-3">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
           </span>
-          0
+          <span id="live-count">0</span>
         </h4>
       </div>
     </div>
   </div>
 </section>
 
-<section id="about" class="py-24">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold mb-6 text-white">About Us</h3>
-    <p class="text-slate-300 text-lg leading-relaxed">
-      The Media Company connects customers with verified photographers and videographers
-      through a transparent and standardized platform. We eliminate the hassle of negotiation
-      and ensure quality delivery for every memory captured.
-    </p>
-  </div>
-</section>
-
-<section id="services" class="py-24 bg-slate-900">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold mb-12">Our Services</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="card p-8 rounded-xl border border-slate-700/50">
-        <div class="text-yellow-400 text-4xl mb-4">📸</div>
-        <h4 class="text-xl font-bold mb-2">Photography Marketplace</h4>
-        <p class="text-slate-400 text-sm">Weddings, Events, and Portraits.</p>
-      </div>
-      <div class="card p-8 rounded-xl border border-slate-700/50">
-        <div class="text-yellow-400 text-4xl mb-4">🎥</div>
-        <h4 class="text-xl font-bold mb-2">Videography Services</h4>
-        <p class="text-slate-400 text-sm">Cinematic films and coverage.</p>
-      </div>
-      <div class="card p-8 rounded-xl border border-slate-700/50">
-        <div class="text-yellow-400 text-4xl mb-4">✅</div>
-        <h4 class="text-xl font-bold mb-2">Verified Professionals</h4>
-        <p class="text-slate-400 text-sm">100% vetted creative experts.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="py-24">
-  <div class="max-w-3xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">FAQ</h3>
-    <div class="space-y-6 text-slate-300">
-      <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-        <p class="font-bold text-white mb-2">Q: When are you launching?</p>
-        <p>A: We are launching in March 2026. Keep an eye on the countdown!</p>
-      </div>
-      <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-        <p class="font-bold text-white mb-2">Q: Are professionals verified?</p>
-        <p>A: Yes, every creative on our platform undergoes a strict verification process.</p>
-      </div>
-      <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-        <p class="font-bold text-white mb-2">Q: Is this platform pan-India?</p>
-        <p>A: Yes, we are operating across major cities in India.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="py-24 bg-slate-900 border-t border-slate-800">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
-    <p class="text-slate-400 mb-8 text-lg">
-      Have questions or want to join as a professional?
-    </p>
-    <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-10">
-      <a href="mailto:contact@themediacompany.in" class="text-yellow-400 hover:underline">contact@themediacompany.in</a>
-      <span class="hidden md:block text-slate-600">|</span>
-      <span class="text-slate-300">+91 90000 00000</span>
-    </div>
-    <button class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105 shadow-xl shadow-yellow-400/20">
-      Start a Project
-    </button>
-  </div>
-</section>
-
-<footer class="py-8 text-center text-slate-600 text-sm">
-  &copy; 2026 The Media Company. All rights reserved.
-</footer>
-
-<script>
-  // --- Countdown Logic ---
-  const launchDate = new Date("2026-03-01T00:00:00").getTime();
-  
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
-
-  setInterval(() => {
-    const now = new Date().getTime();
-    const d = launchDate - now;
-    
-    if (d < 0) {
-      document.querySelector('.glow-text').innerText = "WE ARE LIVE";
-      return;
-    }
-    
-    daysEl.innerText = Math.floor(d / (1000 * 60 * 60 * 24));
-    hoursEl.innerText = Math.floor((d / (1000 * 60 * 60)) % 24);
-    minutesEl.innerText = Math.floor((d / (1000 * 60)) % 60);
-    secondsEl.innerText = Math.floor((d / 1000) % 60);
-  }, 1000);
-</script>
-
 <script type="module">
-  // --- Firebase Realtime Stats ---
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getDatabase, ref, runTransaction, onValue, push, onDisconnect }
+  import { getDatabase, ref, runTransaction, onValue, push, onDisconnect, set } 
   from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-  const app = initializeApp({
+  const firebaseConfig = {
     apiKey: "AIzaSyC3NhP2k6ZfCLQcar1jzkZrrA0JFZRrq0E",
     databaseURL: "https://the-media-company-55895-default-rtdb.firebaseio.com"
-  });
+  };
 
+  const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
+  // Elements
   const visitsEl = document.getElementById('total-visits');
-  const liveEl = document.getElementById('live-users');
+  const liveCountEl = document.getElementById('live-count');
 
-  // 1. Total Visits Counter
+  // 1. Total Visits Counter (with session protection)
   const visitsRef = ref(db, "stats/totalVisits");
-  // Increment visit count safely
-  runTransaction(visitsRef, (currentValue) => {
-    return (currentValue || 0) + 1;
-  });
-  // Listen for updates
+  
+  // Only increment if the user hasn't visited in this browser session
+  if (!sessionStorage.getItem('visited')) {
+    runTransaction(visitsRef, (current) => (current || 0) + 1);
+    sessionStorage.setItem('visited', 'true');
+  }
+
   onValue(visitsRef, (snapshot) => {
     visitsEl.innerText = snapshot.val() || 0;
   });
 
   // 2. Live Users Counter
   const liveRef = ref(db, "stats/liveUsers");
-  // Create a temporary entry for this user
-  const user = push(liveRef, {
-    timestamp: Date.now()
-  });
-  // Remove this entry when user closes tab/disconnects
-  onDisconnect(user).remove();
+  const myUserRef = push(liveRef); // Create unique entry for this visitor
   
-  // Count how many users are currently in the list
+  // Add user and remove on disconnect
+  set(myUserRef, { active: true, time: Date.now() });
+  onDisconnect(myUserRef).remove();
+
   onValue(liveRef, (snapshot) => {
-    if (snapshot.exists()) {
-      liveEl.innerText = snapshot.size;
-    } else {
-      liveEl.innerText = 0;
-    }
+    // Correctly count number of children in the liveUsers node
+    liveCountEl.innerText = snapshot.size || 0;
   });
+</script>
+
+<script>
+  // Countdown Logic
+  const launchDate = new Date("2026-03-01T00:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const d = launchDate - now;
+    if (d < 0) return;
+    document.getElementById('days').innerText = Math.floor(d / 86400000);
+    document.getElementById('hours').innerText = Math.floor((d % 86400000) / 3600000);
+    document.getElementById('minutes').innerText = Math.floor((d % 3600000) / 60000);
+    document.getElementById('seconds').innerText = Math.floor((d % 60000) / 1000);
+  }, 1000);
 </script>
 
 </body>
